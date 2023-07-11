@@ -1,11 +1,15 @@
-import './App.css';
+import Pages from "./pages/Pages";
 
-const App=()=>{
+import "./App.css";
+
+const App = () => {
   return (
-    <div className="App">
-     <h1>hello word </h1>
-    </div>
+    <>
+      {" "}
+      <h1>hello word </h1>
+      <Pages />
+    </>
   );
-}
+};
 
 export default App;
