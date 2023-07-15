@@ -1,13 +1,18 @@
 import Pages from "./pages/Pages";
-
+import Category from "./components/Category";
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 
 const App = () => {
   return (
     <>
-      {" "}
-      <h1>hello word </h1>
-      <Pages />
+      <div className="App">
+        <BrowserRouter>
+          {" "}
+          <Category />
+          <Pages />
+        </BrowserRouter>
+      </div>
     </>
   );
 };
