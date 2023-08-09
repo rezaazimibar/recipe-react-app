@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
-import { url } from "../components/URL";
 import { useEffect, useState } from "react";
 
 const Cuisine = () => {
@@ -9,7 +8,7 @@ const Cuisine = () => {
   let params = useParams();
   const getCuisine = async (name) => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${url}&cuisine=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`
     );
     const recipes = await data.json();
     setCuisine(recipes.results);

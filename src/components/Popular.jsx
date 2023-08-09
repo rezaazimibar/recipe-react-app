@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { url } from "./URL";
 
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -17,7 +16,7 @@ const Popular = () => {
       setPopular(JSON.parse(check));
     } else {
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${url}&number=10`
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`
       );
       const data = await api.json();
       localStorage.setItem("popular", JSON.stringify(data.recipes));
