@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 const Searched = () => {
   const [searchRecipes, setSearchRecipes] = useState([]);
@@ -15,15 +15,17 @@ const Searched = () => {
   useEffect(() => {
     getSearched(params.search);
   }, [params.search]);
-console.log(searchRecipes  )
+  console.log(searchRecipes);
   return (
     <>
       <Grid>
         {searchRecipes.map((item) => {
           return (
             <Card key={item.id}>
-              <img src={item.image} alt={item.title} />
-              <h4>{item.title}</h4>
+              <Link to={`/recipe/${item.id}`}>
+                <img src={item.image} alt={item.title} />
+                <h4>{item.title}</h4>
+              </Link>
             </Card>
           );
         })}
