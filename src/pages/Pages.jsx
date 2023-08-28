@@ -6,12 +6,14 @@ import Recipe from "./Recipe";
 const Pages = () => {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Cuisine/:type" element={<Cuisine />} />
-        <Route path="/searched/:search" element={<Searched />} />
-        <Route path="/recipe/:name" element={<Recipe />} />
-      </Routes>
+  
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Cuisine/:type" element={<Cuisine />} />
+          <Route path="/searched/:search" element={<Searched />} />
+          <Route path="/recipe/:name" element={<Recipe />} />
+        </Routes>
+
     </>
   );
 };
